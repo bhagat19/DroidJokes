@@ -9,7 +9,7 @@ public class JokeTeller {
     public final String LOG_TAG = JokeTeller.class.getSimpleName();
 
     public String tellAJoke(){
-        return "A lame joke from java lib via android lib";
+        return "A lame joke from java lib";
     }
 
 }

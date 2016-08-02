@@ -18,6 +18,9 @@ public class DroidJokesActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState){
+        //make a class
+        //do this
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jokesactivity_main);

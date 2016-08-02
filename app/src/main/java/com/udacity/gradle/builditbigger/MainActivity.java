@@ -1,8 +1,11 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,12 +14,14 @@ import com.example.JokeTeller;
 import com.example.amit.androidlibrary.DroidJokesActivity;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
+    public Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.context = getApplicationContext();
     }
 
 
@@ -43,12 +48,16 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view){
-        JokeTeller tellJoke = new JokeTeller();
-        String joke = tellJoke.tellAJoke();
+
+       // JokeTeller tellJoke = new JokeTeller();
+       // String joke = tellJoke.tellAJoke();
+        String joke ="Hello";
+        new EndPointsAsyncTask(context).execute(new Pair<Context, String>(this,joke));
+    /*
         Intent intent = new Intent(this, DroidJokesActivity.class);
         intent.putExtra("joke",joke);
         startActivity(intent);
-
+    */
    //     Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
     }
 
