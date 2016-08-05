@@ -9,6 +9,7 @@ import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.JokeTeller;
 import com.example.amit.androidlibrary.DroidJokesActivity;
@@ -16,15 +17,20 @@ import com.example.amit.androidlibrary.DroidJokesActivity;
 
 public class MainActivity extends AppCompatActivity {
     public Context context;
+    public TextView view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.context = getApplicationContext();
+        view = (TextView) findViewById(R.id.jokeResult_text);
     }
 
-
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -47,12 +53,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view){
+    public void tellJoke(View BtView){
 
        // JokeTeller tellJoke = new JokeTeller();
        // String joke = tellJoke.tellAJoke();
+
         String joke ="Hello";
-        new EndPointsAsyncTask(context).execute(new Pair<Context, String>(this,joke));
+        new EndPointsAsyncTask(context).execute(new Pair<Context, TextView>(this,view));
+
+
     /*
         Intent intent = new Intent(this, DroidJokesActivity.class);
         intent.putExtra("joke",joke);
