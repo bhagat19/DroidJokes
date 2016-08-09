@@ -30,7 +30,7 @@
         android:visibility="visible"
         android:layout_below="@id/joke_button"/>
 
-    <include layout="@layout/ad_view"/>
+
 
 
 
