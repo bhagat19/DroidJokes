@@ -17,7 +17,7 @@ public class MainActivityFragmentWithAd extends MainActivityFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = super.onCreateView(inflater, container, savedInstanceState);
+        View root = super.onCreateView(inflater,container,savedInstanceState);
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
